@@ -1,6 +1,5 @@
-
 .navbar-brand span {
-    color: #FC5B5C;
+    color: #0e82fd;
     font-size: 25px;
     font-weight: 500;
     letter-spacing: 0.1em;
@@ -28,7 +27,7 @@
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: #FC5B5C;
+    color: #0e82fd;
 }
 
 .navbar-expand-md .navbar-nav .dropdown-menu {
@@ -40,7 +39,7 @@
 }
 
 .dropdown-item:hover {
-    background-color: #FC5B5C;
+    background-color: #0e82fd;
     color: #fff;
 }
 .dropdown:hover .dropdown-menu {
@@ -158,4 +157,19 @@ nav {
     #top ul{
         text-align: center;
     }
+}
+.banner_section{
+    background-image: url(../images/banner.PNG);
+    background-size: cover;
+    background-position: center;
+    min-height: 500px; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search_section{
+    background-color: #15558d;
+    height: auto;
 }
