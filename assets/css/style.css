@@ -173,3 +173,28 @@ nav {
     background-color: #15558d;
     height: auto;
 }
+
+.spcialites{
+    border: 1px solid lightsteelblue;
+    border-radius: 100% !important;
+    background: #fff !important;
+    box-shadow: 2px 2px 13px rgb(0 0 0 / 10%) !important;
+    max-width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 30px;
+}
+.footer{
+    background-color: #0072BC;
+    color: white;
+}
+.main_body{
+    background-color: #0072BC;
+}
+.bkas{
+    background-color: white;
+    margin-top: 10%;
+
+}
