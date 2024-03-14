@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user profile</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-md navbar-default" id="banner">
+            <div class="container">
+                <a href="">Logo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="">Specialities</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item"  href="">About Us </a>
+                                <a class="dropdown-item" href="">Team Member</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Doctors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end nav -->
+    </section>
+
+    <section class="profile">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 mt-5 mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>User Name</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="">
+                                <li style="list-style: none;"><a href="" class="text-decoration-none">Appointment History</a></li>
+                                <li style="list-style: none;"><a href="" class="text-decoration-none">My Prescription</a></li>
+                                <li style="list-style: none;"><a href="" class="text-decoration-none">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-12 mt-5 mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>My Appointment List</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Appointment Date</th>
+                                            <th>Appointment Time</th>
+                                            <th>Doctor Name</th>
+                                            <th>Department</th>
+                                            <th>Status</th>
+                                            <th>More</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2024-04-12</td>
+                                            <td>10:00 AM</td>
+                                            <td>Dr. Name</td>
+                                            <td>Orthopedic</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-warning">Pending</button>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2024-02-15</td>
+                                            <td>10:00 AM</td>
+                                            <td>Dr. Name</td>
+                                            <td>Orthopedic</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success">Complete</button>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>2024-04-12</td>
+                                            <td>10:00 AM</td>
+                                            <td>Dr. Name</td>
+                                            <td>Orthopedic</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success">Complete</button>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>2024-02-12</td>
+                                            <td>10:00 AM</td>
+                                            <td>Dr. Name</td>
+                                            <td>Orthopedic</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success">Complete</button>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>2024-04-12</td>
+                                            <td>10:00 AM</td>
+                                            <td>Dr. Name</td>
+                                            <td>Orthopedic</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-danger">Canceled</button>
+                                            </td>
+                                            <td>
+                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center p-3">
+                    © 2020 Copyright:
+                    <a class="text-white" href="#">test.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../assets/js/jquery.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="../assets/js/script.js"></script>
+
+</body>
+</html>
