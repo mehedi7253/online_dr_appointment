@@ -60,9 +60,8 @@
                         </div>
                         <div class="card-body">
                             <ul class="">
-                                <li style="list-style: none;"><a href="" class="text-decoration-none">Appointment History</a></li>
-                                <li style="list-style: none;"><a href="" class="text-decoration-none">My Prescription</a></li>
-                                <li style="list-style: none;"><a href="" class="text-decoration-none">Logout</a></li>
+                                <li style="list-style: none;"><a href="main-profile.html" class="text-decoration-none">Appointment History</a></li>
+                                <li style="list-style: none;"><a href="../login.html" class="text-decoration-none">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -83,7 +82,7 @@
                                             <th>Doctor Name</th>
                                             <th>Department</th>
                                             <th>Status</th>
-                                            <th>More</th>
+                                            <th>Prescription</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -97,7 +96,7 @@
                                                 <button class="btn btn-sm btn-warning">Pending</button>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                                <a href="" class="btn btn-sm btn-warning">Not Ready</a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -110,7 +109,9 @@
                                                 <button class="btn btn-sm btn-success">Complete</button>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    View
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -123,7 +124,9 @@
                                                 <button class="btn btn-sm btn-success">Complete</button>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    View
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -136,7 +139,9 @@
                                                 <button class="btn btn-sm btn-success">Complete</button>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    View
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
@@ -149,7 +154,7 @@
                                                 <button class="btn btn-sm btn-danger">Canceled</button>
                                             </td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-info">View</a>
+                                                <a href="" class="btn btn-sm btn-danger">Canceled</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -172,6 +177,63 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">My Prescription</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="prescription">                
+                <div class="patient-info">
+                    <h2>Patient Information</h2>
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Age:</strong> 35</p>
+                    <p><strong>Gender:</strong> Male</p>
+                    <p><strong>Date:</strong> March 15, 2024</p>
+                </div>
+                
+                <div class="prescription-details">
+                    <p>Prescription Details:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Medicine</th>
+                                <th>Dosage</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Medicine A</td>
+                                <td>10mg</td>
+                                <td>Once daily</td>
+                            </tr>
+                            <tr>
+                                <td>Medicine B</td>
+                                <td>20mg</td>
+                                <td>Twice daily</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
     <script src="../assets/js/jquery.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap.bundle.js"></script>
