@@ -49,53 +49,53 @@
                 <div class="col-md-10 mx-auto mt-5 mb-5">
                     <div class="card">
                         <div class="card-body">
-                            <form id="myForm">
+                            <form action="booking.php" method="post" id="myForm">
                                 <div class="form-group col-md-6 col-sm-12 float-left">
                                     <label>First Name</label>
-                                    <input type="text" id="firstName" class="form-control" placeholder="First Name">
+                                    <input type="text" id="firstName" name="first_name" class="form-control" placeholder="First Name">
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12 float-left">
                                     <label>Last Name</label>
-                                    <input type="text" id="lastName" class="form-control" placeholder="Last Name">
+                                    <input type="text" id="lastName" name="last_name" class="form-control" placeholder="Last Name">
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12 float-left">
                                     <label>Email</label>
-                                    <input type="email" id="email" class="form-control" placeholder="Email">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email">
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12 float-left">
                                     <label>Phone Number</label>
-                                    <input type="text" id="phone" class="form-control" placeholder="Phone Number">
+                                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone Number">
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 float-left">
                                     <label>Address</label>
-                                    <textarea type="text" id="address" class="form-control" placeholder="Address"></textarea>
+                                    <textarea type="text" id="address" name="address" class="form-control" placeholder="Address"></textarea>
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12 float-left">
                                     <label>Age</label>
-                                    <input type="text" class="form-control" placeholder="Age">
+                                    <input type="text" class="form-control" name="age" placeholder="Age">
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12 float-left">
                                     <label>Gender</label>
-                                    <select class="form-control">
-                                        <option>Male</option>
-                                        <option>Female</option>
+                                    <select class="form-control" name="gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-12 col-sm-12 float-left">
                                     <label>Write your problem</label>
-                                    <textarea type="text" id="problem" class="form-control" placeholder="Write your problem"></textarea>
+                                    <textarea type="text" id="problem" name="problem" class="form-control" placeholder="Write your problem"></textarea>
                                     <span class="error"></span>
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12 float-left">
                                     <label></label>
-                                    <a href="bkash.html" type="submit" value="Submit" class="btn btn-primary">Book Now</a>
+                                    <button type="submit" value="Submit" class="btn btn-primary">Book Now</button>
                                 </div>
                             </form>
                         </div>
@@ -139,13 +139,13 @@
         ageInput.addEventListener('keyup', validateAge);
         problemInput.addEventListener('keyup', validateProblem);
 
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            if (validateFirstName() && validateLastName() && validateEmail() && validatePhone() && validateAddress() && validateAge() && validateProblem()) {
-                // Form is valid, do something with the data (e.g., show success message)
-                alert('Form is valid!');
-            }
-        });
+        // form.addEventListener('submit', (event) => {
+        //     event.preventDefault();
+        //     if (validateFirstName() && validateLastName() && validateEmail() && validatePhone() && validateAddress() && validateAge() && validateProblem()) {
+        //         // Form is valid, do something with the data (e.g., show success message)
+        //         alert('Form is valid!');
+        //     }
+        // });
 
         function validateFirstName() {
             const firstName = firstNameInput.value;
