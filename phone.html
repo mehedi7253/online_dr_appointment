@@ -52,13 +52,16 @@
                             <h4 class="text-center">User Login</h4>
                         </div>
                         <div class="card-body">
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Enter Phone Number">
-                            </div>
-                            <div class="form-group">
-                                <a href="user/main-profile.html" type="submit" class="btn btn-success">Submit</a>
-                            </div>
+                           <form id="myForm">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="number" id="phone" name="phone" class="form-control" placeholder="Enter Phone Number">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <a href="otp.html" type="submit" class="btn btn-success">Submit</a>
+                                </div>
+                           </form>
                             <div class="text-center">
                                 <a href="login.html" class="btn btn-info">Login With Email</a>
                             </div>
@@ -86,6 +89,34 @@
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
+    <script>
+         const form = document.getElementById('myForm');
+         const phoneInput = document.getElementById('phone');
+         const errorSpans = document.querySelectorAll('.error');
 
+         phoneInput.addEventListener('keyup', validatePhone);
+
+         form.addEventListener('submit', (event) => {
+             event.preventDefault(); // Prevent default form submission
+             if (validatePhone()) {
+                 // Form is valid, do something with the data (e.g., show success message)
+                 alert('Form is valid!');
+             }
+         });
+
+         function validatePhone() {
+            const phone = phoneInput.value;
+            if (phone.trim() === '') {
+                phoneInput.classList.add('is-invalid');
+                errorSpans[3].innerHTML = 'Phone Number is required';
+                return false;
+            } else {
+                phoneInput.classList.remove('is-invalid');
+                errorSpans[3].innerHTML = '';
+                return true;
+            }
+        }
+
+    </script>
 </body>
 </html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking page</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-md navbar-default" id="banner">
+            <div class="container">
+                <a href="">Logo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="search.html">Doctors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login/SignUp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end nav -->
+    </section>
+
+   <section class="main_content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 mx-auto mt-5 mb-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="myForm">
+                                <div class="form-group col-md-6 col-sm-12 float-left">
+                                    <label>First Name</label>
+                                    <input type="text" id="firstName" class="form-control" placeholder="First Name">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-12 float-left">
+                                    <label>Last Name</label>
+                                    <input type="text" id="lastName" class="form-control" placeholder="Last Name">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-12 float-left">
+                                    <label>Email</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Email">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-12 float-left">
+                                    <label>Phone Number</label>
+                                    <input type="text" id="phone" class="form-control" placeholder="Phone Number">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 float-left">
+                                    <label>Address</label>
+                                    <textarea type="text" id="address" class="form-control" placeholder="Address"></textarea>
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-12 float-left">
+                                    <label>Age</label>
+                                    <input type="text" class="form-control" placeholder="Age">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-12 float-left">
+                                    <label>Gender</label>
+                                    <select class="form-control">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12 float-left">
+                                    <label>Write your problem</label>
+                                    <textarea type="text" id="problem" class="form-control" placeholder="Write your problem"></textarea>
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-12 float-left">
+                                    <label></label>
+                                    <a href="bkash.html" type="submit" value="Submit" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center p-3">
+                    © 2020 Copyright:
+                    <a class="text-white" href="#">test.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const firstNameInput = document.getElementById('firstName');
+        const lastNameInput  = document.getElementById('lastName');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const addressInput = document.getElementById('address');
+        const ageInput = document.getElementById('age');
+        const problemInput = document.getElementById('problem');
+        const errorSpans = document.querySelectorAll('.error');
+
+        firstNameInput.addEventListener('keyup', validateFirstName);
+        lastNameInput.addEventListener('keyup', validateLastName);
+        emailInput.addEventListener('keyup', validateEmail);
+        phoneInput.addEventListener('keyup', validatePhone);
+        addressInput.addEventListener('keyup', validateAddress);
+        ageInput.addEventListener('keyup', validateAge);
+        problemInput.addEventListener('keyup', validateProblem);
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validateFirstName() && validateLastName() && validateEmail() && validatePhone() && validateAddress() && validateAge() && validateProblem()) {
+                // Form is valid, do something with the data (e.g., show success message)
+                alert('Form is valid!');
+            }
+        });
+
+        function validateFirstName() {
+            const firstName = firstNameInput.value;
+            if (firstName.trim() === '') {
+                firstNameInput.classList.add('is-invalid');
+                errorSpans[0].innerHTML = 'First Name is required';
+                return false;
+            } else {
+                firstNameInput.classList.remove('is-invalid');
+                errorSpans[0].innerHTML = '';
+                return true;
+            }
+        }
+
+        function validateLastName() {
+            const lastName = lastNameInput.value;
+            if (lastName.trim() === '') {
+                lastNameInput.classList.add('is-invalid');
+                errorSpans[1].innerHTML = 'Last Name is required';
+                return false;
+            } else {
+                lastNameInput.classList.remove('is-invalid');
+                errorSpans[1].innerHTML = '';
+                return true;
+            }
+        }
+
+        function validateEmail() {
+            const email = emailInput.value;
+            if (email.trim() === '') {
+                emailInput.classList.add('is-invalid');
+                errorSpans[2].innerHTML = 'Email is required';
+                return false;
+            } else {
+                emailInput.classList.remove('is-invalid');
+                errorSpans[2].innerHTML = '';
+                return true;
+            }
+        }
+
+        function validatePhone() {
+            const phone = phoneInput.value;
+            if (phone.trim() === '') {
+                phoneInput.classList.add('is-invalid');
+                errorSpans[3].innerHTML = 'Phone Number is required';
+                return false;
+            } else {
+                phoneInput.classList.remove('is-invalid');
+                errorSpans[3].innerHTML = '';
+                return true;
+            }
+        }
+
+        function validateAddress() {
+            const address = addressInput.value;
+            if (address.trim() === '') {
+                addressInput.classList.add('is-invalid');
+                errorSpans[4].innerHTML = 'Address is required';
+                return false;
+            } else {
+                addressInput.classList.remove('is-invalid');
+                errorSpans[4].innerHTML = '';
+                return true;
+            }
+        }
+
+        function validateAge() {
+            const age = ageInput.value;
+            if (age.trim() === '') {
+                ageInput.classList.add('is-invalid');
+                errorSpans[5].innerHTML = 'Age is required';
+                return false;
+            } else {
+                ageInput.classList.remove('is-invalid');
+                errorSpans[5].innerHTML = '';
+                return true;
+            }
+        }
+
+        function validateProblem() {
+            const problem = problemInput.value;
+            if (problem.trim() === '') {
+                problemInput.classList.add('is-invalid');
+                errorSpans[6].innerHTML = 'Problem is required';
+                return false;
+            } else {
+                problemInput.classList.remove('is-invalid');
+                errorSpans[6].innerHTML = '';
+                return true;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
