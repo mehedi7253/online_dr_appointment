@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-md navbar-default" id="banner">
+            <div class="container">
+                <a href="">Logo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="search.html">Doctors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login/SignUp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end nav -->
+    </section>
+
+    <section class="reg_form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto mb-5">
+                    <div class="card mt-5 mb-5">
+                        <div class="card-header">
+                            <h4 class="text-center">User Registration</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="myForm">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="number" name="phone" id="phone" class="form-control" placeholder="Enter Phone">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter password">
+                                    <span class="error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <a href="user/main-profile.html" type="submit" class="btn btn-success">Submit</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <a href="login.html">Already have account? Click Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center p-3">
+                    © 2020 Copyright:
+                    <a class="text-white" href="#">test.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script>
+        const form = document.getElementById('myForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const passwordInput = document.getElementById('password');
+        const errorSpans = document.querySelectorAll('.error');
+
+        nameInput.addEventListener('keyup', validateName);
+        emailInput.addEventListener('keyup', validateEmail);
+        phoneInput.addEventListener('keyup', validatePhone);
+        passwordInput.addEventListener('keyup', validatePass);
+
+        form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default form submission
+            if (validateName() && validateEmail() && validatePhone() && validatePass()) {
+                // Form is valid, do something with the data (e.g., show success message)
+                alert('Form is valid!');
+            }
+        });
+
+
+        function validateName() {
+            const name = nameInput.value;
+            if (name.trim() === '') {
+                errorSpans[0].textContent = 'Name is required';
+                return false;
+            } else {
+                errorSpans[0].textContent = '';
+                return true;
+            }
+        }
+
+        function validateEmail() {
+        const email = emailInput.value.trim();
+        const errorSpan = emailInput.nextElementSibling;
+        const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if (email === '') {
+                errorSpan.textContent = 'Email is required';
+                return false;
+            } else if (!emailRegex.test(email)) {
+                errorSpan.textContent = 'Invalid email format';
+                return false;
+            } else {
+                errorSpan.textContent = '';
+                return true;
+            }
+        }
+
+
+        function validatePhone() {
+        const phone = phoneInput.value.trim();
+        const errorSpan = phoneInput.nextElementSibling;
+            if (phone === '') {
+                errorSpan.textContent = 'Phone number is required';
+                return false;
+            } else {
+                errorSpan.textContent = '';
+                return true;
+            }
+        }
+
+        function validatePass(){
+            const password = passwordInput.value.trim();
+            const errorSpan = passwordInput.nextElementSibling;
+            if (password === '') {
+                errorSpan.textContent = 'Password is required';
+                return false;
+            } 
+
+            const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\s]).{8,}$/;
+
+            if (!passwordRegex.test(password)) {
+                errorSpan.textContent = 'Password must be at least 8 characters and include at least one uppercase letter, lowercase letter, number, and special character';
+                return;
+            }
+            errorSpan.textContent = '';
+        }
+
+
+    </script>
+</body>
+</html>

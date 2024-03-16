@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <section>
@@ -30,8 +30,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="">Specialities</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item"  href="">About Us </a>
+                                <a class="dropdown-item" href="">Team Member</a>
+                            </div>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="search.html">Doctors</a>
+                            <a class="nav-link" href="">Doctors</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.html">Login/SignUp</a>
@@ -53,18 +60,16 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Enter Phone Number">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter Email">
                             </div>
                             <div class="form-group">
-                                <a href="user/main-profile.html" type="submit" class="btn btn-success">Submit</a>
+                                <label>Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Enter password">
                             </div>
-                            <div class="text-center">
-                                <a href="login.html" class="btn btn-info">Login With Email</a>
+                            <div class="form-group">
+                                <a href="./index.html" type="submit" class="btn btn-success">Submit</a>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="reg.html">No Account? Click Here</a>
                         </div>
                     </div>
                 </div>
@@ -82,10 +87,10 @@
             </div>
         </div>
     </section>
-    <script src="assets/js/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.bundle.js"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="../assets/js/script.js"></script>
 
 </body>
 </html>
