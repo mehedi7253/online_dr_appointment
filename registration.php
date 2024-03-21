@@ -13,19 +13,20 @@
     }
 
     $username = $_POST["name"];
+	$address = $_POST["address"];
     $email    = $_POST["email"];
     $phone    = $_POST["phone"];
     $password = $_POST["password"];
 
     // Validate user input (example)
-    if (empty($username) || empty($email) || empty($phone) || empty($password) ) {
+    if (empty($username) || empty($address) || empty($email) || empty($phone) || empty($password) ) {
         echo "<script>window.location.href = 'reg.html';</script>";
         exit;
     }
 
     $hash = hash('sha256', $password);
 
-    $sql ="INSERT INTO users (name, email, phone, password) VALUES ('$username', '$email','$phone', '$hash')";
+    $sql ="INSERT INTO users (name, address, email, phone, password) VALUES ('$username','$address', '$email','$phone', '$hash')";
     $res = mysqli_query($connect, $sql);
 
     if ($res) {

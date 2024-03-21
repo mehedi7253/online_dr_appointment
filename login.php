@@ -14,23 +14,24 @@
 
     $email    = $_POST['email'];
     $password = $_POST['password'];
+    $role     = $_POST['role'];
     $has = hash('sha256', $password);
 
-    $sql = "SELECT * FROM users WHERE email ='$email' AND password = '$has'";
+    $sql = "SELECT * FROM users WHERE email ='$email' AND password = '$has' AND role = '$role'";
 
     $result = mysqli_query($connect, $sql);
     $row = mysqli_num_rows($result);
 
     // Validate user input (example)
-    if (empty($email) || empty($password) ) {
-        echo "<script>window.location.href = 'login.html';</script>";
-        exit;
-    }
+    // if (empty($email) || empty($password) ) {
+    //     echo "<script>window.location.href = 'login.html';</script>";
+    //     exit;
+    // }
 
 
-    if ($row == 1){
+    if ($row['role'] == '0'){
         echo "Login Done";
-        echo "<script>window.location.href = './user/main-profile.html';</script>";
+        echo "<script>window.location.href = './superadmin/index.html';</script>";
     }else{
         echo "<script>window.location.href = 'login.html';</script>";
     }
