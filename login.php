@@ -1,42 +1,44 @@
 <?php
-     $serverName = "localhost";
-     $username   = "root";
-     $password   = "";
-     $dbname     = "online_appointment";
- 
-     // create connection
-     $connect = mysqli_connect($serverName, $username, $password, $dbname);
- 
-     // Check connection
-    if (!$connect) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$serverName = "localhost";
+$username   = "root";
+$password   = "";
+$dbname     = "online_appointment";
 
-    $email    = $_POST['email'];
-    $password = $_POST['password'];
-    $role     = $_POST['role'];
-    $has = hash('sha256', $password);
+// create connection
+$connect = mysqli_connect($serverName, $username, $password, $dbname);
 
-    $sql = "SELECT * FROM users WHERE email ='$email' AND password = '$has' AND role = '$role'";
+// Check connection
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-    $result = mysqli_query($connect, $sql);
-    $row = mysqli_num_rows($result);
+$email    = $_POST['email'];
+$password = $_POST['password'];
+// $role     = $_POST['role'];
+$has = hash('sha256', $password);
 
-    // Validate user input (example)
-    // if (empty($email) || empty($password) ) {
-    //     echo "<script>window.location.href = 'login.html';</script>";
-    //     exit;
-    // }
+// Validate user input (example)
+if (empty($email) || empty($password) ) {
+    echo "<script>window.location.href = 'login.html';</script>";
+    exit;
+}
 
+$sql = "SELECT * FROM users WHERE email ='$email' AND password = '$has'";
+$res = mysqli_query($connect, $sql);
+$row = $res->fetch_assoc();
+$user = $row['email'];
+$pass = $row['password'];
+$type = $row['role'];
 
-    if ($row['role'] == '0'){
-        echo "Login Done";
-        echo "<script>window.location.href = './superadmin/index.html';</script>";
+if ($user == $email && $pass = $password) {
+    session_start();
+    if($type == '0')
+    {
+        echo "<script>window.location.href ='superadmin/index.html';</script>";
+    }else if($type == '1'){
+        echo "<script>window.location.href ='user/index.html';</script>";
     }else{
-        echo "<script>window.location.href = 'login.html';</script>";
+        echo "<script>window.location.href ='doctor/index.html';</script>";
     }
-
-    
-
-    
+}
 ?>
